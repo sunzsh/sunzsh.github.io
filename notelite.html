@@ -54,9 +54,16 @@
         resolve();
       });
     }
+    function load() {
+      const text = localStorage.getItem('text');
+      if (text) {
+        const editor = document.getElementById('editor');
+        editor.innerHTML = text;
+      }
+    }
 
     let throttleTimeout;
-    document.querySelector("#editor").addEventListener("input", function() {
+    function onInput() {
       document.querySelector("#hint").style.display = 'inline-block';
       if (throttleTimeout) {
         clearTimeout(throttleTimeout);
@@ -66,15 +73,34 @@
           document.querySelector("#hint").style.display = 'none';
         });
       }, 800);
+    }
+
+    document.querySelector("#editor").addEventListener("input", function() {
+      onInput();
     }, false);
 
-    function load() {
-      const text = localStorage.getItem('text');
-      if (text) {
-        const editor = document.getElementById('editor');
-        editor.innerHTML = text;
+    document.addEventListener('paste', function(event) {
+      const items = (event.clipboardData && event.clipboardData.items) || [];
+      if (items && items.length) {
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                const reader = new FileReader()
+                reader.onload = function(event) {
+                    setTimeout(() => {
+                      const img = document.querySelector('img[src^="blob\:http"]')
+                      if (img) {
+                        img.src = event.target.result;
+                        onInput();
+                      }
+                    }, 1);
+                }
+                reader.readAsDataURL(items[i].getAsFile());
+                break;
+            }
+        }
       }
-    }
+    });
+
     load();
   </script>
 </body>
