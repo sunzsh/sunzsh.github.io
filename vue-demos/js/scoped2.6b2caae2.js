@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["scoped2"],{"1f5f":function(t,e,n){"use strict";n.r(e);var s=function(){var t=this,e=t._self._c;return e("div",{staticStyle:{"text-align":"center","font-size":"34px"}},[e("a",{attrs:{href:"https://www.baidu.com"}},[t._v("百度")]),e("test")],1)},a=[],r={data(){return{}}},c=r,i=n("2877"),o=Object(i["a"])(c,s,a,!1,null,"7e6e1554",null);e["default"]=o.exports}}]);
+//# sourceMappingURL=scoped2.6b2caae2.js.map
