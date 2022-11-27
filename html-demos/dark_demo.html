@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            background: white;
+            color: #333; 
+        }
+        .wrapper {
+            text-align: center;
+            display: flex;
+            width: 900px;
+            margin: 0 auto;
+            font-size: larger;
+        }
+        .wrapper .lyric {
+            flex-grow: 1;
+            padding: 10px 0px;
+        }
+        .wrapper .lyric div {
+            line-height: 2;
+            height: calc(100vh - 180px);
+            overflow: auto;
+        }
+        .wrapper .cover img {
+            width: 400px;
+            margin: 0 20px;
+            position: relative;
+            top: calc(50vh - 200px);
+            border-radius: 200px;
+        }
+
+        @media screen and (max-width: 900px) {
+            .wrapper .cover {
+                display: none;
+            }
+
+            .wrapper {
+                width: 100%;
+            }
+            .wrapper .lyric div {
+                height: inherit;
+                overflow: inherit;
+            }
+        }
+
+        @media screen and (prefers-color-scheme: dark) {
+            body {
+                background-color: #202124;
+                color: #eee;
+            }
+        }
+        
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cover">
+            <img src="/images/yrftx.jpg"/>
+        </div>
+        <div class="lyric">
+            <h1>《本草纲目》</h1></h1>
+            <div>如果华佗再世 崇洋都被医治<br/>外邦来学汉字 激发我民族意识<br/>马钱子决明子苍耳子 还有莲子<br/>黄药子苦豆子川楝子 我要面子<br/>用我的方式 改写一部历史<br/>没什么别的事 跟着我念几个字<br/>山药当归枸杞 GO<br/>山药 当归 枸杞 GO<br/>看我抓一把中药 服下一帖骄傲<br/>我表情悠哉 跳个大概<br/>动作轻松自在 你学不来<br/>霓虹的招牌 调整好状态<br/>在华丽的城市 等待醒来<br/>我表情悠哉 跳个大概<br/>用书法书朝代 内力传开<br/>豪气挥正楷 给一拳对白<br/>结局平躺下来 看谁厉害<br/>炼成什么丹 揉成什么丸<br/>鹿茸切片不能太薄<br/>老师傅的手法不能这样乱抄<br/>龟苓膏云南白药 还有冬虫夏草<br/>自己的音乐自己的药 分量刚刚好<br/>听我说中药苦 抄袭应该更苦<br/>快翻开本草纲目 多看一些善本书<br/>蟾酥地龙 已翻过江湖<br/>这些老祖宗的辛苦 我们一定不能输<br/>就是这个光 就是这个光 一起唱<br/>（就是这个光 就是这个光 Hey~）<br/>让我来调个偏方 专治你媚外的内伤<br/>已扎根千年的汉方 有别人不知道的力量<br/>我表情悠哉 跳个大概<br/>动作轻松自在 你学不来<br/>霓虹的招牌 调整好状态<br/>在华丽的城市 等待醒来<br/>我表情悠哉 跳个大概<br/>用书法书朝代 内力传开<br/>豪气挥正楷 给一拳对白<br/>结局平躺下来 看谁厉害<br/>又蹲 小僵尸蹲 暗巷点灯<br/>又蹲 小僵尸蹲 钻萝卜坑<br/>又蹲 小僵尸蹲 念咒语哼<br/>蹲 小僵尸 蹲 小僵尸 蹲<br/>又蹲 小僵尸蹲 暗巷点灯<br/>又蹲 小僵尸蹲 钻萝卜坑<br/>又蹲 小僵尸蹲 念咒语哼<br/>啦啦啦啦啦（啦啦啦啦啦）<br/>啦啦啦啦啦（啦啦啦啦啦 嘿～）<br/>啦啦啦啦啦（啦啦啦啦啦）<br/>啦啦啦啦啦（啦啦啦啦啦）</div>
+        </div> 
+    </div>
+     
+</body>
+</html>

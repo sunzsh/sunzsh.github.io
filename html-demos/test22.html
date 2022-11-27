@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="some-element-you-want-to-animate">test</h1>
+    <script>
+        const element = document.getElementById('some-element-you-want-to-animate');
+let start, previousTimeStamp;
+let done = false
+
+function step(timestamp) {
+  if (start === undefined) {
+    start = timestamp;
+  }
+  const elapsed = timestamp - start;
+
+  if (previousTimeStamp !== timestamp) {
+    // 这里使用 `Math.min()` 确保元素刚好停在 200px 的位置。
+    const count = Math.min(0.09 * elapsed, 200);
+    console.log(0.09 * elapsed, 200);
+    element.style.transform = 'translateX(' + count + 'px)';
+    if (count === 200) done = true;
+  }
+
+  if (elapsed < 2000) { // 在两秒后停止动画
+    previousTimeStamp = timestamp;
+    if (!done) {
+      window.requestAnimationFrame(step);
+    }
+  }
+}
+
+window.requestAnimationFrame(step);
+    </script>
+</body>
+</html>

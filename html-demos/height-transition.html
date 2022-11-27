@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      background: linear-gradient(rgb(64, 145, 247), rgb(107, 35, 232))
+    }
+    .button {
+      position: absolute;
+      top: 80px;
+      left: 400px;
+      height: 42px;
+      line-height: 42px;
+      text-align: center;
+      padding: 0 24px;
+      border-radius: 4px;
+      background-color: rgb(255, 255, 255);
+      cursor: default;
+      color: #232323;
+      user-select: none;
+    }
+    .button:hover {
+      background-color: rgb(242, 242, 242);
+    }
+    .search-wrapper {
+      position: absolute;
+      top: 80px;
+      left: 80px;
+      padding: 12px 0px 0px 0px;
+      width: 300px;
+      border-radius: 4px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+    .search-wrapper input {
+      margin: 0px 12px 12px 12px;
+      width: calc(100% - 28px);
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .res {
+      padding-left: 12px;
+      overflow: auto;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      max-height: 0px;
+      overflow: hidden;
+    }
+
+    .search-wrapper:focus-within .res, .res:hover {
+      max-height: 200vh;
+      transition: max-height 1s ease-in-out;
+    }
+    .res:hover {
+      max-height: 50vh;
+      overflow: auto;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="txt" class="search-wrapper">
+    <input id="tt" placeholder="请输入查询条件"/>
+    <div class="res">
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+      <div>aslkdfjalskdjf</div>
+    </div>
+  </div>
+  
+</body>
+</html>

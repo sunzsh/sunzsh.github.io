@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fixIME() {
+            // 是否windows系统
+            var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
+            if (!isWin) {
+                return;
+            }
+            let fixIMEWin = window.open();
+            fixIMEWin.close();
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" />
+    <input type="color" onblur="fixIME()"/>
+
+    
+</body>
+</html>

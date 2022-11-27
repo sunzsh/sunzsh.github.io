@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+      overflow: hidden;
+      background-color: cornflowerblue;
+    }
+
+    .item {
+      border: 6px solid red;
+      box-sizing: border-box;
+      transition: flex-grow .3s;
+    }
+    .active {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="item">111</div>
+    <div class="item active">22222</div>
+    <div class="item">3333333</div>
+  </div>
+</body>
+</html>

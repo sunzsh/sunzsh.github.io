@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">test</button>
+
+    <a href="https://lf3-package.vlabstatic.com/obj/faceu-packages/Jianying_2_5_1_4567_0.dmg" target="_blank" download="test.zip">test</a>
+
+    <script>
+        function test() {
+            const link = document.createElement("a");
+            link.style.display = "none";
+            link.href = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png";
+            link.target = "_blank";
+            link.setAttribute("download", "测试");
+            document.body.appendChild(link);
+            link.click();
+            document.removeChild(link);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/ResizeObserver.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #mytable {
+      width: 80%;
+      position: relative;
+    }
+
+
+    #mytable tr {
+      /* position: relative; */
+    }
+    #mytable tr::after {
+      content: ' ';
+      position: absolute;
+      left: 0px;
+      /* bottom: 0px; */
+      margin-top: calc(var(--row-height) - 2px);
+      height: 2px;
+      width: var(--process-value);
+      background-color: red;
+      transition: width 0.5s ease-in-out;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <table id="mytable" contenteditable="true" border="1" cellspacing="0">
+    <tr style="--process-value: 30%">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+  <script>
+    const ro = new ResizeObserver((entries, observer) => {
+      const table = entries[0].target;
+      table.querySelectorAll('tr').forEach((row, index) => {
+        row.style.setProperty('--row-height', `${row.offsetHeight}px`);
+      });
+    });
+
+    ro.observe(mytable);
+  </script>
+</body>
+</html>

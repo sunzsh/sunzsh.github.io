@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 200px;
+            height: 300px;
+            background-color: burlywood;
+            word-wrap: break-word;
+            word-break: break-all;
+            padding: 0 10px;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .line {
+            height: 1px;
+            width: calc(100% - 20px);
+            background-color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="str">
+        lkjlkjflaskdjflaskjdflasjdflks jdfaasdflkjasdfl
+        asdflkajsdlfkjasldfkjasdlf
+        asdfjlaskjdflaksjdflakkjasdlf
+        asdfjlaskjdflaksjdflakkjasdlf
+        asdfjlaskjdflaksjdflak
+        </div>
+    </div>
+
+    <script>
+        function loadLine() {
+            const lineHeight = 30;
+            var content = document.querySelector('.content');
+            var str = content.querySelector('.str');
+            for (var h = 30; h <= str.clientHeight; h += lineHeight) {
+                var line = document.createElement('div');
+                line.className = 'line';
+                line.style.top = `${h}px`;
+                content.appendChild(line);
+            }
+        }
+
+        loadLine();
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tl-photos {
+            display: flex;
+            width: 400px;
+            flex-wrap: wrap;
+        }
+        
+        /* 只有1张照片 */
+        .tl-photos>img:only-child {
+            width: 100%;
+        }
+
+        /* 有2张照片 */
+        .tl-photos>img:first-child:nth-last-child(2),
+        .tl-photos>img:nth-child(2):nth-last-child(1) 
+        {
+            width: 198px;
+        }
+        .tl-photos>img:nth-child(2):nth-last-child(1) 
+        {
+            margin-left: 3px;
+        }
+
+        /* 有3张照片 */
+        .tl-photos>img:first-child:nth-last-child(3),
+        .tl-photos>img:nth-child(2):nth-last-child(2),
+        .tl-photos>img:nth-child(3):nth-last-child(1) 
+        {
+            width: 130px;
+        }
+        .tl-photos>img:nth-child(2):nth-last-child(2),
+        .tl-photos>img:nth-child(3):nth-last-child(1) 
+        {
+            margin-left: 3.33px;
+        }
+
+        /* 有4张照片 */
+        .tl-photos>img:first-child:nth-last-child(4),
+        .tl-photos>img:first-child:nth-last-child(4) ~ img {
+            width: 198px;
+        }
+        .tl-photos>img:nth-child(2):nth-last-child(3),
+        .tl-photos>img:nth-child(4):nth-last-child(1) {
+            margin-left: 3px;
+        }
+        .tl-photos>img:nth-child(2):nth-last-child(3) ~ img {
+            margin-top: 3px;
+        }
+
+
+        /* 有5张以上照片 */
+        .tl-photos>img:first-child:nth-last-child(n + 5),
+        .tl-photos>img:first-child:nth-last-child(n + 5) ~ img {
+            width: 130px;
+        }
+
+        .tl-photos>img:nth-child(3n - 1),
+        .tl-photos>img:nth-child(3n) {
+            margin-left: 3px;
+        }
+        /* 解决上面的margin-left导致只有4张照片时的特殊情况 */
+        .tl-photos>img:nth-child(3):nth-last-child(2){
+            margin-left: 0px;
+        }
+        
+        .tl-photos>img:nth-child(3) ~ img {
+            margin-top: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="tl-photos">
+        <img src="images/tl1.png" />
+        <img src="images/tl2.png" />
+        <img src="images/tl3.png" />
+        <img src="images/tl4.png" />
+        <img src="images/tl5.png" />
+        <!-- <img src="images/tl6.png" /> -->
+        <!-- <img src="images/tl7.png" /> -->
+        <!-- <img src="images/tl8.png" /> -->
+        <!-- <img src="images/tl9.png" /> -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            outline: 1.4px solid blue;
+            background-color: yellow;
+            position: relative;
+        }
+        .abs-child {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 10px;
+            height: 10px;
+            background-color: aqua;
+        }
+        .container1 {
+            width: 10px;
+            height: 10px;
+            display: flex;
+            outline: 1px solid red;
+            /* background-color: yellow; */
+        }
+        .container div, .container1 div {
+            /* height: 10.6px; */
+            flex-grow: 1;
+            /* background: #88a86e; */
+        }
+        .child1 {
+            background-color: #2c8a20;
+        }
+        .child2 {
+            background-color: #323f7c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="child1"></div> -->
+        <!-- <div class="child2"></div> -->
+        <div class="abs-child"></div>
+    </div>
+    <!-- <div class="container1">
+        <div class="child1"></div>
+        <div class="child2"></div>
+    </div> -->
+    <script>document.write(window.devicePixelRatio)</script>
+</body>
+</html>

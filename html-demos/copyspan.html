@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+    }
+  </style>
+  <script>
+    addEventListener('copy', (event) => { 
+      const selection = window.getSelection();
+      const str = selection.toString().replace(/\n%%BR%%\n/g, '');
+      event.clipboardData.setData('text/plain', str)
+      event.preventDefault()
+    });
+  </script>
+  <style>
+    .flex-br, .flex-nobr {
+      width: 0;
+      font-size: 0; 
+      line-height: 0;
+      height: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="test" style="display: flex;user-select: auto;">
+    <span>abc</span><span class="flex-nobr">%%BR%%</span><span>111</span>
+  </div>
+  <div class="test" style="display: flex">
+    <span>sssss</span><span class="flex-nobr">%%BR%%</span><span>222</span>
+  </div>
+  <div class="test1123123" style="display: flex">
+    <span>abc</span><span class="flex-nobr">%%BR%%</span><span>111</span>
+  </div>
+</body>
+</html>

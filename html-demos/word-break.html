@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent-flex {
+            width: 150px;
+            background-color:lightgray;
+            display: flex;
+            align-items: center;
+        }
+
+        .title {
+            outline: 1px solid seagreen;
+            /* word-break: break-all; */
+        }
+
+        .badge {
+            width: 25px;
+            text-align: center;
+            height: 14px;
+            line-height: 14px;
+            flex-shrink: 0;
+            font-size: 12px;
+            background-color:crimson;
+            color: #ffffff;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent-flex">
+
+        <div class="title">
+            <span>
+                Loooooooooong texxxxt
+            </span>
+        </div>
+
+        <div class="badge">vip</div>
+    </div>
+
+    <br/>
+
+
+    <div class="parent-flex">
+
+        <div class="title">
+            <span>
+                Loxxxxxxoong texxt
+            </span>
+        </div>
+
+        <div class="badge">vip</div>
+    </div>
+    
+
+    <script>
+        var titles = document.querySelectorAll('.title');
+        titles.forEach(t => {
+            t.style.width = t.querySelector('span').offsetWidth + 'px';
+        });
+    </script>
+    
+</body>
+</html>

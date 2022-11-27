@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log(window);
+    window.isfocus = true;
+    window.onblur = function(){
+        window.isfocus = false;
+    }
+    window.onfocus = function(){
+        window.isfocus = true;
+    }
+
+        
+        
+    function startIThrown(){
+        setTimeout(function() {
+            if (window.isfocus) {
+                console.log('失败了')
+            } else {
+                console.log('成功了');
+            }
+        }, 100);
+
+        // If "custom-uri://" is registered the app will launch immediately and your
+        // timer won't fire. If it's not set, you'll get an ugly "Cannot Open Page"
+        // dialogue prior to the App Store application launching
+        window.location = "test://";
+      }
+      
+    </script>
+      <a href="#" onclick="startIThrown()">Restart iThrown</a>
+</body>
+</html>
