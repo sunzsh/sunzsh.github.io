@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦的光点</title>
+</head>
+
+<body>
+  <div style="--size: 60px;"></div>
+  <div style="--size: 80px;"></div>
+  <div style="--size: 150px;"></div>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      min-height: 100vh;
+      width: 100vw;
+    }
+
+    div {
+      width: var(--size);
+      height: var(--size);
+      vertical-align: top;
+      
+      
+      border-radius: 50%;
+      margin: 0 20px;
+      display: inline-block;
+      background-color: #4da6e5;
+      box-shadow: 0 0 50px 5px #79bcec, 0 0 150px 5px #a6d2f2;
+      animation: bubble 5s linear infinite;
+      /* transform: translateY(calc(100vh - var(--size) / 2)) scale(1); */
+      
+    }
+
+    div:nth-of-type(even) {
+      background-color: #df208f;
+      box-shadow: 0 0 50px 5px #e73a9f, 0 0 150px 5px #e867ff;
+    }
+
+    @keyframes bubble {
+      from {
+        transform: translateY(calc(100vh - var(--size) / 2)) scale(0);
+      }
+
+      to {
+        transform: translateY(-10vh) scale(1);
+      }
+    }
+
+
+  </style>
+</body>
+
+</html>
