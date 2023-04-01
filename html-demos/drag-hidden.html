@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 60px;
+      display: inline-block;
+      line-height: 30px;
+      background-color: yellow;
+      position: relative;
+      /* overflow: scroll; */
+    }
+  </style>
+  <script>
+    function test(e) {
+      console.log(e);
+    }
+  </script>
+</head>
+<body>
+  
+  <div class="box" draggable="true" ondragstart="test(event)">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <!-- <div style="background-color: red; position: absolute; left: 200px; top: 100px;"> -->
+    <div style="overflow: hidden;">
+      4
+    </div>
+    <div>5</div>
+  </div>
+  <img style="display: inline-block; width: 300px;" src="http://oa.successhetai.com/static/img/background_oa.0feedb41.jpg" />
+  zzzz<br/>zzzz<br/>zzzz<br/>zzzz<br/>zzzz<br/>zzzz<br/>zzzz<br/>zzzz<br/>zzzz<br/>
+
+</body>
+</html>
