@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["svg-icon"],{"0257":function(s,t,n){"use strict";n("d780")},"146c":function(s,t,n){"use strict";n.r(t);var c=function(){var s=this,t=s._self._c;return t("div",[t("div",{staticClass:"mytest"},[t("svg-icon",{attrs:{"icon-class":"loudou"}}),s._v(" 程序员小山与Bug ")],1)])},i=[],o={},u=o,a=(n("0257"),n("2877")),e=Object(a["a"])(u,c,i,!1,null,"3b603ea6",null);t["default"]=e.exports},d780:function(s,t,n){}}]);
+//# sourceMappingURL=svg-icon.c4abe978.js.map

@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["statistic"],{"85b3":function(t,e,n){"use strict";n.r(e);var a=function(){var t=this,e=t._self._c;return e("div",[e("el-statistic",{attrs:{value:t.deadline,format:"HH:mm:ss","time-indices":""}})],1)},i=[],s={data(){return{deadline:Date.now()+72e5}}},l=s,r=n("2877"),u=Object(r["a"])(l,a,i,!1,null,null,null);e["default"]=u.exports}}]);
-//# sourceMappingURL=statistic.8ebbc020.js.map

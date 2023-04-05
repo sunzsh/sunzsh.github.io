@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["scoped1"],{"19c8":function(t,n,e){"use strict";e.r(n);var c=function(){var t=this,n=t._self._c;return n("div",{staticStyle:{"text-align":"center","font-size":"34px"}},[n("a",{attrs:{href:"https://cn.bing.com"}},[t._v("必应")]),n("test")],1)},s=[],a={data(){return{}}},i=a,r=(e("1b61"),e("2877")),o=Object(r["a"])(i,c,s,!1,null,"da91a1a8",null);n["default"]=o.exports},"1b61":function(t,n,e){"use strict";e("5272")},5272:function(t,n,e){}}]);
+//# sourceMappingURL=scoped1.1b098954.js.map
