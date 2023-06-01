@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义滚动条</title>
+<style>
+* {
+	margin:0;
+	padding:0;
+}
+#div1 {
+	width:500px;
+	height:20px;
+	background:#eee;
+	margin:50px auto 0;
+	border-radius:10px;
+	position:relative;
+}
+#div2 {
+	width:100px;
+	height:20px;
+	background:#dd6e1e;
+	border-radius:10px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#div3 {
+	width:500px;
+	height:300px;
+	border:1px #ddd solid;
+	margin:30px auto 0;
+	border-radius:10px;
+	overflow: auto;
+	position:relative;
+	scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+#div3::-webkit-scrollbar {
+	display: none; /* Chrome Safari */
+}
+#div4 {
+	position:absolute;
+}
+#div4 p {
+	text-indent:1em;
+	margin:10px;
+	color:#666;
+	font-size:14px;
+}
+</style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+<div id="div3">
+    <div id="div4">
+        <p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。</p>
+        <p>jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展；拥有便捷的插件扩展机制和丰富的插件。jQuery兼容各种主流浏览器，如IE 6.0+、FF 1.5+、Safari 2.0+、Opera 9.0+等。</p>
+        <p>2006年1月John Resig等人创建了jQuery；8月，jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。</p>
+        <p>2007年7月，jQuery 1.1.3版发布，这次小版本的变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。同年9月，jQuery 1.2版发布，它去掉了对XPath选择符的支持，原因是相对于CSS语法它已经变得多余了。这一版能够对效果进行更为灵活的定制，而且借助新增的命名空间事件，也使插件开发变得更容易。同时，jQuery UI项目也开始启动，这个新的套件是作为曾经流行但已过时的Interface插件的替代项目而发布的。jQuery UI中包含大量预定义好的部件（widget），以及一组用于构建高级元素（例如可拖放、拖拽、排序）的工具。</p>
+<p>2008年5月，jQuery 1.2.6版发布，这版主要是将Brandon Aaron开发的流行的Dimensions插件的功能移植到了核心库中，同时也修改了许多BUG，而且有不少的性能得到提高。因此，如果以前的jQuery版本升级到1.2.6，那么完全可以从代码中排除Dimensions插件（一个获得元素尺寸、定位的插件）。</p>
+<p>2010年1月，也是jQuery的四周年生日，jQuery 1.4版发布，为了庆祝jQuery四周岁生日，jQuery团队特别创建了jquery14.com站点，带来了连续14天的新版本专题介绍。</p>
+    </div>
+</div>
+
+<script>
+div2.onmousedown = function(e) {
+    var ev = e || event;
+    var l = ev.clientX - this.offsetLeft;
+		div3.setAttribute('moving', '1')
+    document.onmousemove = function(e) {
+        var ev = e || event;
+        var needL = ev.clientX - l;
+        //不超过左边距离
+        needL < 0 ? needL = 0 : needL;
+        //不超过右边距离
+        var maxL = div1.offsetWidth - div2.offsetWidth;
+        needL > maxL ? needL = maxL : needL;
+        //计算滚动比例
+        var pre = div2.offsetLeft / maxL;
+
+        div2.style.left = needL + 'px';
+				div3.scrollTop = (div3.scrollHeight - div3.clientHeight) * pre;
+
+        // div4.style.top = -div3.offsetHeight * pre + 'px';
+        // div3.scrollTop = div3.offsetHeight * pre + 'px';
+
+    };
+    document.onmouseup = function() {
+      document.onmousemove = document.onmouseup = null;
+			div3.removeAttribute('moving')
+    };
+    return false;
+}
+div3.addEventListener("scroll", (e)=>{
+	if (div3.getAttribute('moving')) {
+		return
+	}
+	const pre = e.target.scrollTop / (e.target.scrollHeight - e.target.clientHeight)
+	div2.style.left = (div1.clientWidth - div2.offsetWidth) * pre + 'px';
+});
+</script>
+
+</body>
+</html>
