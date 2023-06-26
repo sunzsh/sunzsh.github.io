@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outter {
+      width: 400px;
+      height: 150px;
+      background-color: rgb(112, 112, 112);
+      position: relative;
+    }
+    .inner {
+      width: 80px;
+      height: 50px;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <script>
+    let outterMouseDowned = false
+    function clickOutter(e) {
+      if (!outterMouseDowned) {
+        return
+      }
+      console.log('click-outter---', e)
+    }
+    function clickInner(e) {
+      console.log('click-inner===', e)
+      e.stopPropagation()
+    }
+    
+  </script>
+</head>
+<body>
+  <div class="outter" onclick="clickOutter(event)" onmousedown="outterMouseDowned = event.target.classList.contains('outter')">
+    <div class="inner" onclick="clickInner(event)">
+    </div>
+  </div>
+</body>
+</html>
