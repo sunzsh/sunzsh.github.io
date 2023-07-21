@@ -1,0 +1,12 @@
+{
+	"name": "JsonEditor",
+	"short_name": "JsonEditor",
+	"display": "standalone",
+	"start_url": "/",
+	"icons":
+	[{
+		"src": "resources/icon.png",
+		"sizes": "256x256",
+		"type": "image/png"
+	}]
+}
