@@ -4,8 +4,8 @@
 	"start_url": "./pwa.html",
 	"icons":
 	[{
-		"src": "images/icon-1.png",
-		"sizes": "128x128",
+		"src": "images/icon-144.png",
+		"sizes": "144x144",
 		"type": "image/png"
 	}]
 }
