@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json" />
+  <title>Document</title>
+</head>
+<body>
+  test
+  <button id="btn" style="display:none" onclick="pwaEvent.prompt()">添加</button>
+
+  <script>
+    let pwaEvent = null
+    window.addEventListener('beforeinstallprompt', e => {
+      pwaEvent = e
+      btn.style.display = 'block'
+
+      pwaEvent.userChoice.then(res => {
+        console.log(res.outcome)
+      })
+    })
+  </script>
+</body>
+</html>

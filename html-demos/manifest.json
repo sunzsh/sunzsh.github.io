@@ -1,0 +1,11 @@
+{
+	"name": "Test",
+	"display": "standalone",
+	"start_url": "./pwa.html",
+	"icons":
+	[{
+		"src": "images/icon-1.png",
+		"sizes": "128x128",
+		"type": "image/png"
+	}]
+}
