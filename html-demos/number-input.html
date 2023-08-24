@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function fixInvalidChar(e) {
+      if (e.data === '' && e.target.value === '') {
+        e.target.value = '0';
+        setTimeout(() => {
+          e.target.value = ''
+        }, 0);
+      }
+    }
+  </script>
+</head>
+<body>
+  <input style="text-align: center;" type="number" oninput="fixInvalidChar(event)" />
+</body>
+</html>

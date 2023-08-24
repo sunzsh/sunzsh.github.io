@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["page-char"],{8378:function(e,a,t){"use strict";t.r(a);var n=function(){var e=this,a=e._self._c;return a("div",[a("el-pagination",{ref:"pagination",attrs:{"current-page":1,"page-sizes":[100,200,300,400],"page-size":100,layout:"total, sizes, prev, pager, next, jumper",total:400}})],1)},p=[],r={},i=r,s=t("2877"),l=Object(s["a"])(i,n,p,!1,null,null,null);a["default"]=l.exports}}]);
+//# sourceMappingURL=page-char.595444a1.js.map
