@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      width: 80%;
+      margin: 1em auto;
+      outline: 1px dashed #999;
+      
+      display: flex;
+      align-items: stretch;
+    }
+    .item-a, .item-b, .item-c {
+      padding: 12px;
+      outline: none;
+      flex: 1;
+      /* height: 100%; */
+    }
+    .item-a { background-color: aquamarine; }
+    .item-b { background-color: deepskyblue; }
+    .item-c { background-color: coral; }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="item-a" contenteditable="true"> item-a </div>
+    <div class="item-b" contenteditable="true"> item-b<br>item-b<br>item-b<br>item-b </div>
+    <div class="item-c" contenteditable="true"> item-c<br>item-c </div>
+  </div>
+
+</body>
+</html>

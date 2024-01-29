@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      overflow-x: hidden;
+      font-size: 24px;
+    }
+    .scrollbar-hide {
+      /* 隐藏滚动条 */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none; /* Chrome Safari */
+    }
+
+    
+    
+    .wrapper {
+      display: flex;
+      margin: 4em 1em;
+      overflow: auto;
+      /* justify-content: center; */
+    }
+    .wrapper :first-child {
+      margin-left: auto;
+    }
+    .wrapper :last-child {
+      margin-right: auto;
+    }
+    .item-button {
+      color: #989898;
+      display: block;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .wrapper .item-button+.item-button {
+      margin-left: 1.5em;
+    }
+    .item-button.active {
+      color: #333333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper scrollbar-hide">
+    <div class="item-button" >tab按钮1</div>
+    <div class="item-button active mla-l">tab按钮2</div>
+    <div class="item-button">tab按钮3</div>
+    <div class="item-button">tab按钮4</div>
+    <div class="item-button">超长tab按钮5</div>
+    <div class="item-button">超超长tab按钮6</div>
+  </div>
+
+</body>
+</html>

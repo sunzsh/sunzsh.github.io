@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <title>PPT</title>
+</head>
+<body>
+  
+  <div style="width: 80vw; height: 70vh;">
+    <div id="placeholder"></div>
+  </div>
+
+  <script type="text/javascript" src="http://localhost:8001/web-apps/apps/api/documents/api.js"></script>
+
+
+  <script>
+    axios.get('http://172.28.3.105:3000/editor-config?fileName=new.pptx&lang=zh&directUrl=false')
+    .then(function (res) {
+      const config = res.data
+      window.docEditor = new DocsAPI.DocEditor("placeholder", config);
+    })
+  </script>
+</body>
+</html>

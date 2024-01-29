@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #right, #wrong {
+      display: none;
+    }
+    body, html {
+      margin: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+    #txt {
+      width: 240px;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      padding: 0 5px;
+    }
+    #txt:focus {
+      /* border: 1px solid #dcdcdc; */
+      box-shadow: 0 0 3px #dcdcdc;
+    }
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .center {
+      transform: translateY(-50%);
+      width: 280px;
+      height: 64px;
+    }
+  </style>
+  <script>
+    // 校验集装箱号码
+    function check(value) {
+      let getNumber = new Map();
+      let num = 10;
+      // 生成字母与数字对照表
+      for (let i = 0; i < 26; i++) {
+          let word = String.fromCharCode((65 + i));
+          // 对应码取消了11的倍数，比如11，22，33，所以我们要排除掉
+          if (num === 11 || num === 22 || num === 33) {
+              num += 1;
+          }
+          getNumber.set(word, num);
+          num += 1;
+      }
+      let sum = 0;
+      // 取四个字母对应的数字，并进行计算
+      for (let i = 0; i < 4; i++) {
+          sum += getNumber.get(value[i]) * Math.pow(2, i);
+      }
+      // 对前6个数字进行计算
+      for (let i = 4; i < 10; i++) {
+          sum += value[i] * Math.pow(2, i);
+      }
+      // 再对10取余是防止出现校验码为10的情况，假如校验码为10，则取0
+      checkDigit = sum % 11 % 10;
+      // 判断校验码是否与最后一位数字相等
+      if (checkDigit === Number(value[10])) {
+          console.log('校验通过')
+          return true;
+      } else {
+          console.log('校验失败')
+          return false;
+      }
+
+    };
+    
+    function onInput() {
+      if (txt.value === '') {
+        right.style.display = 'none';
+        wrong.style.display = 'none';
+        return;
+      }
+      if (check(txt.value)) {
+        right.style.display = 'inline';
+        wrong.style.display = 'none';
+      } else {
+        wrong.style.display = 'inline';
+        right.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div></div>
+    <div class="center">
+      <div style="color: #aaa; height: 32px; line-height: 32px;">集装箱号：</div>
+      <input id="txt" oninput="onInput()" />
+      <span id="wrong">❌</span>
+      <span id="right">✅</span>
+    </div>
+  </div>
+</body>
+</html>
